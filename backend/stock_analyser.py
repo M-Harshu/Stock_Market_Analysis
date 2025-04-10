@@ -1,6 +1,6 @@
 import yfinance as yf
 
-tickers = ["AAPL", "MSFT", "GOOGL", "TSLA", "AMZN", "TCS.NS", "RELIANCE.NS"]
+tickers = ["AAPL", "MSFT", "GOOGL", "TSLA", "AMZN", "TCS.NS", "RELIANCE.NS", "MARUTI.NS", "PIIND.NS", "LT.NS", "NH.NS"]
 
 criteria = {
     "Sales Growth (5Y)": 10,
@@ -20,11 +20,11 @@ def analyze_stock(ticker_symbol):
         data = {
             "Ticker": ticker_symbol,
             "Company": info.get("longName", "N/A"),
-            "Sales Growth (5Y)%": info.get("revenueGrowth", 0) * 100,
-            "EPS Growth (Q)%": info.get("earningsQuarterlyGrowth", 0) * 100,
-            "Operating Margin%": info.get("operatingMargins", 0) * 100,
-            "ROE%": info.get("returnOnEquity", 0) * 100,
-            "ROCE% (proxy)": info.get("returnOnAssets", 0) * 100,
+            "Sales Growth (5Y)%": info.get("revenueGrowth", 0) * 100 if info.get("revenueGrowth") else 0,
+            "EPS Growth (Q)%": info.get("earningsQuarterlyGrowth", 0) * 100 if info.get("earningsQuarterlyGrowth") else 0,
+            "Operating Margin%": info.get("operatingMargins", 0) * 100 if info.get("operatingMargins") else 0,
+            "ROE%": info.get("returnOnEquity", 0) * 100 if info.get("returnOnEquity") else 0,
+            "ROCE% (proxy)": info.get("returnOnAssets", 0) * 100 if info.get("returnOnAssets") else 0,
             "Debt to Equity": info.get("debtToEquity", 0),
             "P/E Ratio": info.get("trailingPE", 0)
         }
@@ -39,11 +39,13 @@ def analyze_stock(ticker_symbol):
             data["P/E Ratio"] < criteria["P/E Ratio"]
         )
 
-        data["Recommendation"] = "BUY ✅" if passes else "NOT A BUY ❌"
+        data["Recommendation"] = "BUY " if passes else "NOT A BUY "
         return data
 
     except Exception as e:
         return {"Ticker": ticker_symbol, "Error": str(e)}
 
 def analyze_all_stocks():
-    return [analyze_stock(ticker) for ticker in tickers]
+    # Analyze all stocks from the list
+    results = [analyze_stock(ticker) for ticker in tickers]
+    return results

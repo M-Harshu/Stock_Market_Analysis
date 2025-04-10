@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.navbar {
+    background-color: white;
+    border-bottom: 4px solid #34D399; /* Green underline */
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .navbar-logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: black; /* Black logo text */
+  }
+  
+  .navbar-menu a {
+    margin-left: 2rem;
+    text-decoration: none;
+    color: black; /* Black menu text */
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .navbar-menu a:hover {
+    color: #34D399; /* Hover effect */
+  }
+  

@@ -4,9 +4,9 @@ export const mockStocks: Stock[] = [
   {
     symbol: 'AMZN',
     name: 'Amazon.com Inc.',
-    price: 192.17,
+    price: 182.28,
     change: 1.91,
-    changePercent: 1.00,
+    changePercent: 4.62,
     marketCap: 2000000000000, // approx.
     peRatio: 58.2, // estimated
     volume: 52000000, // approx.
@@ -14,9 +14,9 @@ export const mockStocks: Stock[] = [
   {
     symbol: 'MSFT',
     name: 'Microsoft Corporation',
-    price: 382.19,
+    price: 377.22,
     change: 6.79,
-    changePercent: 1.81,
+    changePercent: -3.40,
     marketCap: 2840000000000, // approx.
     peRatio: 35.6, // estimated
     volume: 28000000, // approx.
@@ -24,9 +24,9 @@ export const mockStocks: Stock[] = [
   {
     symbol: 'AAPL',
     name: 'Apple Inc.',
-    price: 223.19,
+    price: 190.44,
     change: 1.06,
-    changePercent: 0.48,
+    changePercent: -4.32,
     marketCap: 3450000000000, // approx.
     peRatio: 29.4, // estimated
     volume: 79000000, // approx.
@@ -34,9 +34,9 @@ export const mockStocks: Stock[] = [
   {
     symbol: 'TSLA',
     name: 'Tesla, Inc.',
-    price: 175.79,
-    change: -4.67,
-    changePercent: -2.59,
+    price: 250.74,
+    change: -7.88,
+    changePercent: -7.88,
     marketCap: 560000000000, // approx.
     peRatio: 41.8, // estimated
     volume: 95000000, // approx.
@@ -44,9 +44,9 @@ export const mockStocks: Stock[] = [
   {
     symbol: 'GOOGL',
     name: 'Alphabet Inc.',
-    price: 157.07,
-    change: 2.42,
-    changePercent: 1.57,
+    price: 155.98,
+    change: 3.15,
+    changePercent: -3.15,
     marketCap: 1950000000000, // approx.
     peRatio: 26.9, // estimated
     volume: 27000000, // approx.
