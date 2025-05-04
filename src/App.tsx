@@ -17,7 +17,7 @@ function App() {
       <div className="flex flex-col min-h-screen bg-[#1E3A8A] text-black">
 
         {/* Top Navigation Bar */}
-        <div className="bg-[#34D399]">
+        <div className="bg-[#0D2818]">
           <Navbar />
         </div>
 

@@ -62,6 +62,7 @@ const NewsSection = ({ title, data }: { title: string; data: typeof stockNews })
               <span>{news.source}</span>
               <span>{news.date}</span>
             </div>
+
             <a
               href={news.url}
               className="text-blue-600 hover:text-blue-800 font-medium"

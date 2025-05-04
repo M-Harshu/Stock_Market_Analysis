@@ -19,8 +19,8 @@ export default function StockScreener() {
       if (filters.maxPrice && stock.price > Number(filters.maxPrice)) return false;
       if (filters.minPE && stock.peRatio < Number(filters.minPE)) return false;
       if (filters.maxPE && stock.peRatio > Number(filters.maxPE)) return false;
-      if (filters.minMarketCap && stock.marketCap < Number(filters.minMarketCap) * 1e9) return false;
-      if (filters.maxMarketCap && stock.marketCap > Number(filters.maxMarketCap) * 1e9) return false;
+      if (filters.minMarketCap && stock.marketCap < Number(filters.minMarketCap) * 1e9) return false; // Convert to full value
+      if (filters.maxMarketCap && stock.marketCap > Number(filters.maxMarketCap) * 1e9) return false; // Convert to full value
       return true;
     });
   };
@@ -116,14 +116,13 @@ export default function StockScreener() {
             >
               <div className="text-lg font-semibold mb-2">{stock.name}</div>
               <div className="text-2xl font-bold mb-2">${stock.price.toFixed(2)}</div>
-              <div className={`flex items-center text-sm font-medium ${
-                stock.changePercent >= 0 ? 'text-green-400' : 'text-red-400'
-              }`}>
+              <div className="text-sm mb-2">P/E Ratio: {stock.peRatio}</div> {/* Displaying P/E Ratio */}
+              <div className="text-sm mb-2">
+                Market Cap: ${ (stock.marketCap / 1e9).toFixed(2)}B {/* Displaying Market Cap */}
+              </div>
+              <div className={`flex items-center text-sm font-medium ${stock.changePercent >= 0 ? 'text-green-400' : 'text-red-400'}`}>
                 {stock.changePercent >= 0 ? <ArrowUpRight size={16} /> : <ArrowDownRight size={16} />}
-                <span className="ml-1">
-                  {stock.changePercent >= 0 ? '+' : ''}
-                  {stock.changePercent.toFixed(2)}%
-                </span>
+                <span className="ml-1">{stock.changePercent >= 0 ? '+' : ''}{stock.changePercent.toFixed(2)}%</span>
               </div>
             </div>
           ))}
