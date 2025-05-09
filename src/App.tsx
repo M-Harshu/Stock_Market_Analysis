@@ -24,7 +24,7 @@ function App() {
         {/* Main Content Area */}
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Signup />} />
             <Route path="/trending" element={<TrendingStocks />} />
             <Route path="/news" element={<MarketNews />} />
             <Route path="/screener" element={<StockScreener />} />
