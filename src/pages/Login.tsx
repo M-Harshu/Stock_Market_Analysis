@@ -19,7 +19,7 @@ function Login() {
 
       if (response.ok) {
         alert(data.message);
-        navigate('/'); // Redirect to home page
+        navigate('/home'); // Redirect to home page
       } else {
         alert(data.error);
       }
