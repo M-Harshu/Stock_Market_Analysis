@@ -71,11 +71,27 @@ def stock_prediction():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-# --- Root route to confirm server is running ---
-@app.route('/')
-def home():
+# # --- Root route to confirm server is running ---
+# @app.route('/')
+# def home():
+#     return '✅ Flask server is running!'
+
+@app.route('/status')
+def status():
     return '✅ Flask server is running!'
 
+#  JSON stock prediction route
+@app.route('/')
+def home():
+    try:
+        prediction_data = analyze_all_stocks()
+        return jsonify(prediction_data)
+    except Exception as e:
+        return jsonify({'error': str(e)}), 
 # --- Main ---
 if __name__ == '__main__':
+    print("Available routes:")
+    for rule in app.url_map.iter_rules():
+        print(f"{rule.methods} -> {rule}")
+    
     app.run(debug=True)

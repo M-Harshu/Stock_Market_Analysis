@@ -22,7 +22,7 @@ function Signup() {
       alert(data.message);
 
       if (data.success) {
-        navigate('/login'); // Redirect after successful signup
+        navigate('/login');
       }
     } catch (error) {
       alert('Signup failed. Please try again.');
@@ -32,16 +32,18 @@ function Signup() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-white">
+    <div className="flex justify-center items-center h-screen bg-[#1E3A8A] text-white px-4">
       <form
         onSubmit={handleSignup}
-        className="bg-[#f0f4f8] p-6 rounded-lg shadow-md w-80 space-y-4"
+        className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-lg w-full max-w-sm space-y-5"
       >
-        <h2 className="text-xl font-bold text-center text-[#1E3A8A]">Sign Up</h2>
+        <h2 className="text-2xl font-bold text-center text-[#34D399]">
+          Sign Up
+        </h2>
         <input
           type="text"
           placeholder="Username"
-          className="w-full p-2 border rounded"
+          className="w-full p-2 bg-white/20 text-white placeholder-white/70 rounded focus:outline-none focus:ring-2 focus:ring-[#34D399]"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
@@ -49,7 +51,7 @@ function Signup() {
         <input
           type="email"
           placeholder="Email"
-          className="w-full p-2 border rounded"
+          className="w-full p-2 bg-white/20 text-white placeholder-white/70 rounded focus:outline-none focus:ring-2 focus:ring-[#34D399]"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -57,14 +59,14 @@ function Signup() {
         <input
           type="password"
           placeholder="Password"
-          className="w-full p-2 border rounded"
+          className="w-full p-2 bg-white/20 text-white placeholder-white/70 rounded focus:outline-none focus:ring-2 focus:ring-[#34D399]"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
         <button
           type="submit"
-          className="w-full bg-[#1E3A8A] text-white py-2 rounded hover:bg-[#3B82F6] disabled:opacity-50"
+          className="w-full bg-[#34D399] text-[#1E3A8A] font-semibold py-2 rounded hover:bg-[#10B981] transition duration-200 disabled:opacity-50"
           disabled={loading}
         >
           {loading ? 'Signing up...' : 'Sign Up'}
