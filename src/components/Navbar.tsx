@@ -6,7 +6,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', path: '/' },
+    { name: 'Home', path: '/home' },
     { name: 'Trending Stocks', path: '/trending' },
     { name: 'Market News', path: '/news' },
     { name: 'Stock Screener', path: '/screener' },

@@ -35,6 +35,7 @@ function App() {
             <Route path="/learn" element={<Learn />} />
             <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} /> {/* Login page */}
+            <Route path="/home" element={<Home />} /> 
           </Routes>
         </main>
 
